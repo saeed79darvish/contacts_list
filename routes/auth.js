@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //@Route    GET '/api/auth'
-//@desc    get login  user
+//@desc     get login  user
 //@access   private
 router.get("/", (req, res) => {
   res.send("get login user");
