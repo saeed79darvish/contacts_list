@@ -35,7 +35,7 @@ const About = () => {
 
                     </div>
                     <MDBCol lg="7">
-                        <div
+                        {/* <div
                             id="map-container"
                             className="rounded z-depth-1-half map-container"
 
@@ -51,7 +51,7 @@ const About = () => {
                             />
 
 
-                        </div>
+                        </div> */}
                         <br />
 
                     </MDBCol>
