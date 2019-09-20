@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import Alert from '../layout/Alert';
 
 
+
 const Login = ({ auth: { error, isAuthenticated }, login, clearError, setAlert, history }) => {
 
 
@@ -47,50 +48,57 @@ const Login = ({ auth: { error, isAuthenticated }, login, clearError, setAlert, 
     return (
 
 
-        <div className="container">
+        <div style={{ height: "100vh" }} className="container">
+            <div className="row">
+                <div className="col-sm">
+                    <div style={{ marginTop: "100px" }} >
+                        <Alert />
+                        <h1 className="text-white" >
+                            Account <span className="text-danger">Login</span>
+                        </h1>
 
-            <div style={{ marginTop: "150px", padding: "3%" }} >
-                <Alert />
-                <h1 className="text-white" >
-                    Account <span className="text-danger">Login</span>
-                </h1>
+
+                        <form onSubmit={onSubmit}>
+                            <div className='list-group'>
+                                <label className="text-white" htmlFor='email'>Email Address</label>
+                                <input
+                                    type='email'
+                                    name='email'
+                                    value={email}
+                                    onChange={onChange}
+                                    required
+                                />
+                            </div>
+                            <div className='list-group'>
+                                <label className="text-white" htmlFor='password'>Password</label>
+                                <input
+                                    type='password'
+                                    name='password'
+                                    value={password}
+                                    onChange={onChange}
+                                    required
+                                />
+                            </div>
+                            <input
+                                style={{ marginTop: "30px" }}
+                                type='submit'
+                                value='Login'
+                                className='btn btn-danger btn-block'
+                            />
+                        </form>
 
 
-                <form onSubmit={onSubmit}>
-                    <div className='list-group'>
-                        <label className="text-white" htmlFor='email'>Email Address</label>
-                        <input
-                            type='email'
-                            name='email'
-                            value={email}
-                            onChange={onChange}
-                            required
-                        />
                     </div>
-                    <div className='list-group'>
-                        <label className="text-white" htmlFor='password'>Password</label>
-                        <input
-                            type='password'
-                            name='password'
-                            value={password}
-                            onChange={onChange}
-                            required
-                        />
+                    <div style={{ marginTop: "20px" }}>
+                        <Link className="text-white" to="/register">create a new account</Link>
                     </div>
-                    <input
-                        style={{ marginTop: "30px" }}
-                        type='submit'
-                        value='Login'
-                        className='btn btn-danger btn-block'
-                    />
-                </form>
-
-
+                </div>
+                <div style={{ marginTop: "180px" }} className="col-sm">
+                    <h3 className="text-white  " >Hi, welcome to <span className="text-danger">CONTACT LIST</span>  application</h3>
+                    <h3 className="text-white ">Create your personal <span className="text-danger">CONTACT LIST</span></h3>
+                </div>
             </div>
-            <div style={{ marginTop: "20px" }}>
-                <Link className="text-white" to="/register">create a new account</Link>
-            </div>
-        </div>
+        </div >
 
     );
 };

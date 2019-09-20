@@ -54,9 +54,9 @@ const ContactForm = ({ forms: { current }, addContact, clearCurrent, updateConta
 
 
     return (
-        <div style={{ marginTop: "10px", backgroundColor: "#07884782" }} className="card">
+        <div style={{ marginTop: "10px" }} className="card">
             <form onSubmit={onSubmit} style={{ marginLeft: "5px", marginRight: "5px" }} className="list-group">
-                <h2 className="text-danger">{!current ? "Add Contact" : "Edit Contact"}</h2>
+                <h2 className="text-primary">{!current ? "Add Contact" : "Edit Contact"}</h2>
                 <input
                     style={{ border: "1px solid grey", marginTop: "5px" }}
                     type="text"
@@ -78,7 +78,7 @@ const ContactForm = ({ forms: { current }, addContact, clearCurrent, updateConta
                     name="phone"
                     value={phone}
                     onChange={onChange} />
-                <h5 className="text-danger" style={{ marginTop: "10px" }}>Contact Type</h5>
+                <h5 className="text-primary" style={{ marginTop: "10px" }}>Contact Type</h5>
                 <input
 
                     type="radio"
@@ -96,9 +96,9 @@ const ContactForm = ({ forms: { current }, addContact, clearCurrent, updateConta
                 />Perfessional{' '}
                 <div >
 
-                    <input type="submit" value={current ? "update Contact" : "Add Contact"} className="btn btn-danger btn-block" />
+                    <input type="submit" value={current ? "update Contact" : "Add Contact"} className="btn btn-primary btn-block" />
                 </div>
-                {current && (<button style={{ marginTop: "10px", marginBottom: "5px" }} className="btn btn-dark btn-block" onClick={clearAll}>
+                {current && (<button style={{ marginTop: "10px", marginBottom: "10px" }} className="btn btn-dark btn-block" onClick={clearAll}>
                     Clear
                 </button>)}
             </form>

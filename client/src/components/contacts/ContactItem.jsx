@@ -13,8 +13,8 @@ const ContactItem = ({ item, deleteContact, setCurrent, clearCurrent }) => {
         clearCurrent();
     }
     return (
-        <div style={{ marginTop: "10px", backgroundColor: "#07884782" }} className="card bg-ligth">
-            <h3 className="text-dark text-left" >
+        <div style={{ marginTop: "10px" }} className="card bg-ligth">
+            <h3 style={{ marginLeft: "10px" }} className="text-dark text-left" >
                 {item.name.charAt(0).toUpperCase() + item.name.slice(1)}{'     '}
 
                 <span style={{ float: "right" }} className={"badge " + (item.type === 'personal' ? "badge-success" : "badge-primary")}>
@@ -31,7 +31,7 @@ const ContactItem = ({ item, deleteContact, setCurrent, clearCurrent }) => {
 
 
             </ul>
-            <p style={{ marginTop: "10px" }}>
+            <p style={{ marginTop: "10px", marginLeft: "10px" }}>
                 <button onClick={() => setCurrent(item)} className="btn btn-dark btn-sm">Edit</button>
                 <button onClick={() => deleteItem(item._id)} style={{ marginLeft: "10px" }} className="btn btn-danger btn-sm">Delete</button>
             </p>

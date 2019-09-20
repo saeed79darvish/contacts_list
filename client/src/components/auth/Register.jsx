@@ -53,7 +53,7 @@ const Register = ({ history, loadUser, setAlert, register, clearError, auth: { e
 
     const { name, email, password, password2 } = user;
     return (
-        <div className="container">
+        <div style={{ height: "100vh" }} className="container">
 
             <div style={{ marginTop: "150px", padding: "3%" }} className="form-container" >
                 <Alert />
@@ -85,7 +85,7 @@ const Register = ({ history, loadUser, setAlert, register, clearError, auth: { e
 
             </div>
             <div style={{ marginTop: "20px" }}>
-                <Link className="text-danger" to="/login">already registered</Link>
+                <Link className="text-white" to="/login">already registered</Link>
             </div>
 
         </div>
