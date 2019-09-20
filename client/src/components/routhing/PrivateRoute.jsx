@@ -7,7 +7,7 @@ import { } from "../action/authAction"
 const PrivateRoute = ({ component: Component, auth: { isAuthenticated, loading }, ...rest }) => {
     return (
         <Route {...rest} render={props => !isAuthenticated && !loading ? (
-            <Redirect to="/about" />
+            <Redirect to="/login" />
         ) : (<Component {...props} />)} />
     )
 }
