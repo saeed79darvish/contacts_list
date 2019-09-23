@@ -17,7 +17,7 @@ const Home = ({ loadUser }) => {
     return (
 
 
-        <div style={{ marginTop: "100px", height: "100vh" }} className="container">
+        <div style={{ marginTop: "100px", height: "100" }} className="container">
             <div className="row">
                 <div className="col-sm">
                     <ContactForm />
