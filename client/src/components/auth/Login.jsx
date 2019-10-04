@@ -50,6 +50,10 @@ const Login = ({ auth: { error, isAuthenticated }, login, clearError, setAlert, 
 
         <div style={{ height: "100vh" }} className="container">
             <div className="row">
+                <div style={{ marginTop: "180px" }} className="col-sm">
+                    <h3 className="text-white  " >Hi, welcome to <span className="text-danger">CONTACT LIST</span>  application</h3>
+                    <h3 className="text-white ">Create your personal <span className="text-danger">CONTACT LIST</span></h3>
+                </div>
                 <div className="col-sm">
                     <div style={{ marginTop: "100px" }} >
                         <Alert />
@@ -93,10 +97,7 @@ const Login = ({ auth: { error, isAuthenticated }, login, clearError, setAlert, 
                         <Link className="text-white" to="/register">create a new account</Link>
                     </div>
                 </div>
-                <div style={{ marginTop: "180px" }} className="col-sm">
-                    <h3 className="text-white  " >Hi, welcome to <span className="text-danger">CONTACT LIST</span>  application</h3>
-                    <h3 className="text-white ">Create your personal <span className="text-danger">CONTACT LIST</span></h3>
-                </div>
+
             </div>
         </div >
 

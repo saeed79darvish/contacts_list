@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { addContact, clearCurrent, updateContact } from '../action/contactsAction'
+import { addContact, clearCurrent, updateContact, getContacts } from '../action/contactsAction'
+import { loadUser } from '../action/authAction'
 
-const ContactForm = ({ forms: { current }, addContact, clearCurrent, updateContact }) => {
+const ContactForm = ({ forms: { current, contactsList, filtered }, addContact, clearCurrent, updateContact, getContacts }) => {
 
     const [contact, setContact] = useState({
         name: "",
@@ -26,13 +27,16 @@ const ContactForm = ({ forms: { current }, addContact, clearCurrent, updateConta
         // eslint-disable-next-line 
     }, [current])
 
+    useEffect(() => {
+        if (current !== null) {
 
+            getContacts()
+        }
+    })
     const { name, phone, email, type } = contact;
     const onChange = (e) => setContact({ ...contact, [e.target.name]: e.target.value })
 
-    const clearAll = () => {
-        clearCurrent();
-    }
+
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -45,11 +49,19 @@ const ContactForm = ({ forms: { current }, addContact, clearCurrent, updateConta
                 type: "personal"
             })
 
+
         } else {
 
             updateContact(contact)
+
+
+
         }
         clearAll()
+    }
+
+    const clearAll = () => {
+        clearCurrent();
     }
 
 
@@ -63,21 +75,25 @@ const ContactForm = ({ forms: { current }, addContact, clearCurrent, updateConta
                     placeholder="name"
                     name="name"
                     value={name}
-                    onChange={onChange} />
+                    onChange={onChange}
+
+                />
                 <input
                     style={{ border: "1px solid grey", marginTop: "5px" }}
                     type="text"
                     placeholder="email"
                     name="email"
                     value={email}
-                    onChange={onChange} />
+                    onChange={onChange}
+                />
                 <input
                     style={{ border: "1px solid grey", marginTop: "5px" }}
                     type="text"
                     placeholder="phone"
                     name="phone"
                     value={phone}
-                    onChange={onChange} />
+                    onChange={onChange}
+                />
                 <h5 className="text-primary" style={{ marginTop: "10px" }}>Contact Type</h5>
                 <input
 
@@ -86,6 +102,7 @@ const ContactForm = ({ forms: { current }, addContact, clearCurrent, updateConta
                     value="personal"
                     checked={type === "personal"}
                     onChange={onChange}
+
                 />Personal{' '}
                 <input
                     type="radio"
@@ -93,6 +110,7 @@ const ContactForm = ({ forms: { current }, addContact, clearCurrent, updateConta
                     value="perfessional"
                     checked={type === "perfessional"}
                     onChange={onChange}
+
                 />Perfessional{' '}
                 <div >
 
@@ -110,4 +128,4 @@ const mapStateToProps = state => ({
     forms: state.contacts
 })
 
-export default connect(mapStateToProps, { addContact, clearCurrent, updateContact })(ContactForm);
+export default connect(mapStateToProps, { addContact, clearCurrent, updateContact, getContacts })(ContactForm);

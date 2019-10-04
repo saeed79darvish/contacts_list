@@ -64,7 +64,7 @@ const Register = ({ history, loadUser, setAlert, register, clearError, auth: { e
                 <form className="form-group" onSubmit={onSubmit} >
                     <div style={{ marginLeft: "5px" }} className="list-group">
                         <label className="text-white" htmlFor="name">Name</label>
-                        <input type="text" name="name" value={name} onChange={onChange} required minLength="6" />
+                        <input type="text" name="name" value={name} onChange={onChange} required minLength="4" />
                     </div>
                     <div style={{ marginLeft: "5px" }} className="list-group">
                         <label className="text-white" htmlFor="name">Email Address</label>

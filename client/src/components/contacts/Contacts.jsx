@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import ContactItem from './ContactItem';
 import { getContacts } from "../action/contactsAction"
 import Spinner from "../layout/Spinner"
+import { loadUser } from '../action/authAction';
 
 
 
@@ -11,10 +12,11 @@ const Contacts = ({ cont: { contactsList, filtered, loading }, getContacts }) =>
 
 
     useEffect(() => {
+
         getContacts();
 
-
-    })
+        // eslint-disable-next-line
+    }, [contactsList, filtered])
     if (contactsList !== null && contactsList.length === 0 && !loading) {
         return <h4 style={{ marginTop: "10px" }} className="text-white">please add a new contact</h4>
     }
