@@ -13,7 +13,7 @@ const Register = ({ history, loadUser, setAlert, register, clearError, auth: { e
         password: "",
         password2: ""
     })
-    console.log(error)
+    
     useEffect(() => {
 
         if (isAuthenticated) {
